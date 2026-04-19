@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "improved-api-performance-by-30",
+    "title": "How I Improved API Performance by 30%",
+    "excerpt": "A practical walkthrough of how query analysis, indexing, and reducing unnecessary data access brought measurable speed gains to enterprise APIs.",
+    "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2026-03-14",
+    "readTime": 8,
+    "category": "Performance",
+    "tags": ["sql", "performance", "dotnet", "api"],
+    "featured": true,
+    "content": [
+      {
+        "id": "context",
+        "heading": "Context",
+        "paragraphs": [
+          "The performance issue showed up in a payroll and HR workflow where API endpoints were doing more work than the user experience really needed. Pages that should have felt instant were becoming noticeably slow as data volume grew.",
+          "Instead of guessing, I started by measuring the response times, identifying the slowest endpoints, and comparing query patterns across the data-access layer. The goal was not just a faster benchmark, but a meaningful improvement in production behavior."
+        ]
+      },
+      {
+        "id": "investigation",
+        "heading": "Where the Bottleneck Was",
+        "paragraphs": [
+          "The biggest problems came from missing indexes, repeated database calls for related data, and endpoint logic that pulled more columns than the frontend actually needed. Some queries were functionally correct but expensive under realistic usage.",
+          "I looked at query execution plans, reviewed API flows end to end, and matched slow SQL with the exact screens users were waiting on. That made it easier to prioritize fixes with visible impact."
+        ],
+        "codeTitle": "Lean query projection in EF Core",
+        "codeSnippet": "var employees = await context.Employees\n    .Where(x => x.IsActive)\n    .OrderBy(x => x.LastName)\n    .Select(x => new EmployeeListItemDto\n    {\n        Id = x.Id,\n        FullName = x.FirstName + \" \" + x.LastName,\n        Department = x.Department.Name,\n        Status = x.Status\n    })\n    .ToListAsync();"
+      },
+      {
+        "id": "result",
+        "heading": "The Result",
+        "paragraphs": [
+          "After tuning the queries, adding the right indexes, and reducing unnecessary round trips, the API response time improved by roughly 30%. More importantly, the affected workflows felt much smoother for the teams using them every day.",
+          "The lesson was simple: performance wins often come from consistent, targeted improvements rather than one dramatic rewrite."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "jwt-authentication-in-aspnet-core",
+    "title": "JWT Authentication in ASP.NET Core",
+    "excerpt": "A clear path to implementing token-based authentication in ASP.NET Core without turning security configuration into a maintenance problem.",
+    "coverImage": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2026-02-22",
+    "readTime": 9,
+    "category": "Security",
+    "tags": ["jwt", "security", "aspnetcore"],
+    "featured": false,
+    "content": [
+      {
+        "id": "why-jwt",
+        "heading": "Why JWT Still Matters",
+        "paragraphs": [
+          "JWT-based authentication remains a practical fit for many internal and line-of-business applications when you want stateless APIs, clean separation between frontend and backend, and straightforward integration with Angular or mobile clients.",
+          "The important part is not just issuing a token. It is defining claims well, validating them consistently, and keeping authorization rules readable."
+        ]
+      },
+      {
+        "id": "setup",
+        "heading": "Basic Setup",
+        "paragraphs": [
+          "In ASP.NET Core, the most common mistakes are weak token validation settings, not setting issuer and audience checks clearly, or mixing authentication and authorization concerns in controllers.",
+          "A solid configuration gives you predictable behavior across environments and avoids surprises later."
+        ],
+        "codeTitle": "JWT authentication setup",
+        "codeSnippet": "builder.Services\n    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)\n    .AddJwtBearer(options =>\n    {\n        options.TokenValidationParameters = new TokenValidationParameters\n        {\n            ValidateIssuer = true,\n            ValidateAudience = true,\n            ValidateLifetime = true,\n            ValidateIssuerSigningKey = true,\n            ValidIssuer = builder.Configuration[\"Jwt:Issuer\"],\n            ValidAudience = builder.Configuration[\"Jwt:Audience\"],\n            IssuerSigningKey = new SymmetricSecurityKey(\n                Encoding.UTF8.GetBytes(builder.Configuration[\"Jwt:Key\"]!))\n        };\n    });"
+      },
+      {
+        "id": "maintenance",
+        "heading": "Keep It Maintainable",
+        "paragraphs": [
+          "Use policies and role claims intentionally. When authorization logic becomes repetitive, move it into policies so controllers stay focused on application behavior rather than security plumbing.",
+          "Good security code is not only correct. It is easy for the next developer to understand and extend."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "sql-query-optimization-tips",
+    "title": "SQL Query Optimization Tips",
+    "excerpt": "Small database improvements can create very visible application wins. These are the practical checks I reach for first.",
+    "coverImage": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2026-02-05",
+    "readTime": 7,
+    "category": "Database",
+    "tags": ["sql", "database", "indexing"],
+    "featured": false,
+    "content": [
+      {
+        "id": "start-with-measurement",
+        "heading": "Start With Measurement",
+        "paragraphs": [
+          "Optimization becomes much easier when you know exactly which query is expensive and how often it runs. Execution plans, index usage, and response-time measurements should guide the work.",
+          "Trying to optimize every query equally usually wastes time. Focus on the high-traffic or high-latency paths first."
+        ]
+      },
+      {
+        "id": "common-fixes",
+        "heading": "Common Fixes That Matter",
+        "paragraphs": [
+          "Adding the right indexes, avoiding SELECT *, filtering earlier, and simplifying joins can drastically reduce execution cost. Even small changes become meaningful in APIs that run the same query repeatedly.",
+          "Also check whether application code is triggering unnecessary repeated calls. Database optimization and application optimization usually work best together."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "angular-api-integration-best-practices",
+    "title": "Angular API Integration Best Practices",
+    "excerpt": "Reliable Angular API layers come from consistency: clean services, typed contracts, thoughtful state handling, and sensible error flows.",
+    "coverImage": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2026-01-27",
+    "readTime": 8,
+    "category": "Frontend",
+    "tags": ["angular", "api", "typescript"],
+    "featured": false,
+    "content": [
+      {
+        "id": "typed-services",
+        "heading": "Use Typed Service Layers",
+        "paragraphs": [
+          "Angular applications stay healthier when HTTP access is centralized in services with explicit request and response models. That gives the rest of the UI predictable contracts and makes future refactors safer.",
+          "I also prefer keeping components focused on display logic rather than raw API details."
+        ],
+        "codeTitle": "Typed Angular data service",
+        "codeSnippet": "getEmployees() {\n  return this.http.get<EmployeeSummary[]>(`${this.baseUrl}/employees`)\n    .pipe(shareReplay(1));\n}"
+      },
+      {
+        "id": "ui-resilience",
+        "heading": "Plan for UI Resilience",
+        "paragraphs": [
+          "Loading states, retries where appropriate, and meaningful error messages are part of API integration quality. Users experience the frontend, not the service layer diagram.",
+          "A fast API still feels broken if the UI does not communicate state clearly."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "azure-devops-cicd-for-dotnet-projects",
+    "title": "Azure DevOps CI/CD for .NET Projects",
+    "excerpt": "CI/CD should reduce stress, not add mystery. Here is how I think about dependable pipelines for .NET teams.",
+    "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2025-12-18",
+    "readTime": 10,
+    "category": "DevOps",
+    "tags": ["azure", "cicd", "devops", "dotnet"],
+    "featured": false,
+    "content": [
+      {
+        "id": "pipeline-goals",
+        "heading": "What a Good Pipeline Should Do",
+        "paragraphs": [
+          "A good pipeline gives the team confidence that the same repeatable process will build, validate, and deploy the application every time. It should be understandable enough that other developers can maintain it without fear.",
+          "For enterprise work, consistency and traceability often matter just as much as raw speed."
+        ]
+      },
+      {
+        "id": "pipeline-structure",
+        "heading": "A Simple Structure",
+        "paragraphs": [
+          "I like separating restore, build, test, publish, and deployment concerns clearly. That makes failures easier to diagnose and keeps release steps explicit.",
+          "Over time, this also helps when onboarding new developers into the release process."
+        ],
+        "codeTitle": "Pipeline outline",
+        "codeSnippet": "steps:\n- task: UseDotNet@2\n  inputs:\n    packageType: sdk\n    version: 8.0.x\n- script: dotnet restore\n- script: dotnet build --configuration Release --no-restore\n- script: dotnet test --configuration Release --no-build\n- script: dotnet publish --configuration Release --output $(Build.ArtifactStagingDirectory)"
+      }
+    ]
+  },
+  {
+    "slug": "role-based-access-control-in-aspnet-core",
+    "title": "Role-Based Access Control in ASP.NET Core",
+    "excerpt": "RBAC becomes much easier to trust when claims, policies, and business rules are aligned from the start.",
+    "coverImage": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80",
+    "publishedAt": "2025-11-30",
+    "readTime": 8,
+    "category": "Security",
+    "tags": ["rbac", "aspnetcore", "security"],
+    "featured": false,
+    "content": [
+      {
+        "id": "design-first",
+        "heading": "Design Roles Around Real Work",
+        "paragraphs": [
+          "RBAC works best when roles reflect actual responsibilities instead of technical convenience. Admin, manager, and employee are useful only if they map clearly to what each user should be able to do.",
+          "That design clarity makes both controller policies and frontend permissions easier to reason about."
+        ]
+      },
+      {
+        "id": "policies",
+        "heading": "Use Policies to Stay Clean",
+        "paragraphs": [
+          "Policies help keep authorization expressive and reusable. Instead of scattering string checks everywhere, define a shared rule once and use it consistently.",
+          "That approach improves readability and reduces the chance of missing an access rule in one endpoint."
+        ],
+        "codeTitle": "Policy-based authorization",
+        "codeSnippet": "builder.Services.AddAuthorization(options =>\n{\n    options.AddPolicy(\"CanManagePayroll\", policy =>\n        policy.RequireRole(\"Admin\", \"PayrollManager\"));\n});\n\n[Authorize(Policy = \"CanManagePayroll\")]\n[HttpPost(\"process\")]\npublic IActionResult ProcessPayroll() => Ok();"
+      }
+    ]
+  }
+]

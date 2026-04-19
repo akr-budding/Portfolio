@@ -1,0 +1,295 @@
+<section class="section-shell relative overflow-hidden py-12 sm:py-16">
+  <div class="hero-orb left-[-7rem] top-[6rem] h-72 w-72 bg-[var(--color-accent)]"></div>
+  <div class="hero-orb right-[-4rem] top-[2rem] h-64 w-64 bg-[var(--color-accent-2)]"></div>
+
+  <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+    <div class="space-y-8 animated-rise">
+      <div class="pill w-fit">
+        <span class="h-2 w-2 rounded-full bg-[var(--color-accent)]"></span>
+        Available for full-time opportunities
+      </div>
+
+      <div class="space-y-6">
+        <p class="font-display text-sm uppercase tracking-[0.45em] text-[var(--color-muted)]">Full-Stack .NET Developer</p>
+        <h1 class="font-display text-5xl font-bold tracking-tight text-white sm:text-6xl xl:text-7xl">
+          Ashwini Ranjan
+        </h1>
+        <p class="max-w-2xl text-xl leading-9 text-[var(--color-muted)]">
+          Building secure, high-performance enterprise applications with Angular, ASP.NET Core, SQL Server, and Azure for modern product teams.
+        </p>
+        <p class="max-w-2xl text-base leading-8 text-[var(--color-muted)]">
+          I’m a Kolkata-based developer with 3+ years of experience shipping payroll, HRMS, reporting, and API-driven systems that scale reliably in production.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="/assets/resume/Ashwini-Ranjan-Resume.pdf"
+          download
+          class="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-slate-950 transition hover:translate-y-[-2px]"
+        >
+          Resume Download
+          <app-ui-icon name="arrow-up-right" className="h-4 w-4" />
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-[var(--color-accent)]/60 hover:bg-[var(--color-accent)]/10">
+          Contact Me
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-[var(--color-accent)]/60 hover:bg-[var(--color-accent)]/10">
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ashwini-ranjan-41b930161" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-[var(--color-accent)]/60 hover:bg-[var(--color-accent)]/10">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="animated-fade">
+      <div class="panel section-card soft-grid relative overflow-hidden">
+        <div class="absolute right-6 top-6 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">
+          Enterprise Focus
+        </div>
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <p class="text-sm uppercase tracking-[0.3em] text-[var(--color-muted)]">Headline</p>
+            <h2 class="font-display text-3xl font-semibold text-white">
+              Full-stack engineering with product ownership, performance focus, and delivery discipline.
+            </h2>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            @for (stat of stats; track stat.label) {
+              <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+                <p class="font-display text-3xl font-bold text-white">{{ stat.value }}</p>
+                <p class="mt-2 text-sm text-[var(--color-muted)]">{{ stat.label }}</p>
+              </div>
+            }
+          </div>
+
+          <div class="rounded-[1.5rem] border border-white/10 bg-black/10 p-5">
+            <p class="text-sm leading-7 text-[var(--color-muted)]">
+              Specialized in enterprise web applications, secure API architecture, SQL performance tuning, Azure deployment pipelines, and thoughtful collaboration with cross-functional teams.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section-shell py-12 sm:py-16">
+  <div class="panel section-card grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+    <app-section-heading
+      eyebrow="About Me"
+      title="Enterprise-minded development across frontend, backend, data, and delivery."
+      description="I enjoy building products that stay fast under real usage, remain maintainable over time, and make life easier for the teams supporting them."
+    />
+
+    <div class="space-y-6 text-[15px] leading-8 text-[var(--color-muted)]">
+      <p>
+        Over the last 3+ years, I’ve worked on enterprise web applications centered around payroll, HRMS, reporting, and internal workflows. My strongest experience is with Angular frontends, ASP.NET Core APIs, SQL Server databases, and Azure-based deployment pipelines.
+      </p>
+      <p>
+        At Gamut Infosystems, I contributed to HR and payroll platforms used by 4,000+ employees. That work included improving API performance, implementing secure JWT and RBAC flows, optimizing data access with Entity Framework Core and SQL indexing, and helping production releases move smoothly through CI/CD.
+      </p>
+      <p>
+        I’m comfortable moving between UI implementation, backend architecture, database troubleshooting, and DevOps coordination. Whether the goal is a cleaner Angular feature, a faster API, a more reliable Azure DevOps pipeline, or a more secure authentication setup, I enjoy solving the whole problem rather than only one layer of it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section-shell py-12 sm:py-16">
+  <app-section-heading
+    eyebrow="Skills"
+    title="A practical toolkit shaped by enterprise delivery."
+    description="From backend architecture to deployment automation, these are the technologies I use most often to deliver production-ready software."
+  />
+
+  <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    @for (group of skillGroups; track group.title) {
+      <article class="panel section-card">
+        <div class="flex items-center gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)]">
+            <app-ui-icon [name]="group.icon" className="h-6 w-6" />
+          </div>
+          <h3 class="font-display text-2xl font-semibold text-white">{{ group.title }}</h3>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          @for (item of group.items; track item) {
+            <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[var(--color-muted)] transition hover:border-[var(--color-accent)]/50 hover:text-white">
+              {{ item }}
+            </span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section id="experience" class="section-shell py-12 sm:py-16">
+  <app-section-heading
+    eyebrow="Experience"
+    title="Timeline of enterprise work and measurable outcomes."
+    description="A quick look at the environments I’ve worked in and the impact I’ve focused on delivering."
+  />
+
+  <div class="mt-10 space-y-6">
+    @for (item of timeline; track item.company) {
+      <article class="panel section-card relative overflow-hidden">
+        <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[var(--color-accent)] to-[var(--color-accent-2)]"></div>
+        <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[var(--color-muted)]">
+              <app-ui-icon name="calendar" className="h-4 w-4" />
+              {{ item.period }}
+            </div>
+            <div>
+              <h3 class="font-display text-3xl font-semibold text-white">{{ item.company }}</h3>
+              <p class="mt-2 text-base font-medium text-[var(--color-accent)]">{{ item.role }}</p>
+              <p class="mt-1 text-sm text-[var(--color-muted)]">{{ item.location }}</p>
+            </div>
+            <p class="text-sm leading-7 text-[var(--color-muted)]">{{ item.summary }}</p>
+          </div>
+
+          <div class="grid gap-4">
+            @for (achievement of item.achievements; track achievement) {
+              <div class="rounded-[1.4rem] border border-white/10 bg-white/5 p-5 text-sm leading-7 text-[var(--color-muted)]">
+                <span class="mr-3 inline-block h-2 w-2 rounded-full bg-[var(--color-accent)]"></span>
+                {{ achievement }}
+              </div>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section id="projects" class="section-shell py-12 sm:py-16">
+  <app-section-heading
+    eyebrow="Projects"
+    title="Hands-on builds across productivity, HR, and secure API scenarios."
+    description="A mix of portfolio-ready product concepts and enterprise-inspired systems designed to highlight problem-solving across the stack."
+  />
+
+  <div class="mt-10 grid gap-6 lg:grid-cols-2">
+    @if (projectsLoading()) {
+      @for (_ of [1, 2, 3, 4]; track $index) {
+        <app-skeleton-card />
+      }
+    } @else {
+      @for (project of projects(); track project.slug) {
+        <app-project-card [project]="project" />
+      }
+    }
+  </div>
+</section>
+
+<section class="section-shell py-12 sm:py-16">
+  <div class="flex items-end justify-between gap-6">
+    <app-section-heading
+      eyebrow="Blog"
+      title="Technical writing focused on API design, security, SQL, and delivery."
+      description="Thoughtful articles that reflect how I approach performance, maintainability, and real-world engineering tradeoffs."
+    />
+    <a routerLink="/blog" class="hidden rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-[var(--color-accent)]/50 hover:bg-[var(--color-accent)]/10 md:inline-flex">
+      View All Posts
+    </a>
+  </div>
+
+  <div class="mt-10 grid gap-6 lg:grid-cols-3">
+    @if (postsLoading()) {
+      @for (_ of [1, 2, 3]; track $index) {
+        <app-skeleton-card />
+      }
+    } @else {
+      @for (post of featuredPosts(); track post.slug) {
+        <app-blog-card [post]="post" />
+      }
+    }
+  </div>
+</section>
+
+<section id="contact" class="section-shell py-12 sm:py-16">
+  <div class="panel section-card grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+    <div class="space-y-6">
+      <app-section-heading
+        eyebrow="Contact"
+        title="Let’s build something reliable, fast, and genuinely useful."
+        description="If you're hiring for a .NET-focused full-stack role or want to discuss a project, I’d be glad to connect."
+      />
+
+      <div class="space-y-4 text-sm text-[var(--color-muted)]">
+        <a href="mailto:ashwini.ranjan@protonmail.com" class="flex items-center gap-3 rounded-[1.3rem] border border-white/10 p-4 transition hover:border-[var(--color-accent)]/50 hover:text-white">
+          <app-ui-icon name="mail" className="h-5 w-5 text-[var(--color-accent)]" />
+          ashwini.ranjan&#64;protonmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/ashwini-ranjan-41b930161" target="_blank" rel="noreferrer" class="flex items-center gap-3 rounded-[1.3rem] border border-white/10 p-4 transition hover:border-[var(--color-accent)]/50 hover:text-white">
+          <app-ui-icon name="linkedin" className="h-5 w-5 text-[var(--color-accent)]" />
+          linkedin.com/in/ashwini-ranjan-41b930161
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer" class="flex items-center gap-3 rounded-[1.3rem] border border-white/10 p-4 transition hover:border-[var(--color-accent)]/50 hover:text-white">
+          <app-ui-icon name="github" className="h-5 w-5 text-[var(--color-accent)]" />
+          GitHub profile placeholder
+        </a>
+      </div>
+
+      <p class="rounded-[1.5rem] border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 p-5 text-sm leading-7 text-[var(--color-muted)]">
+        Recruiters and engineering teams: if you need someone who can contribute across Angular UI, ASP.NET Core APIs, SQL Server performance, and Azure DevOps delivery, let’s talk.
+      </p>
+    </div>
+
+    <form class="space-y-5" (ngSubmit)="submitForm()">
+      <div class="grid gap-5 sm:grid-cols-2">
+        <label class="block">
+          <span class="mb-2 block text-sm font-medium text-[var(--color-muted)]">Name</span>
+          <input
+            type="text"
+            [ngModel]="contactForm().name"
+            (ngModelChange)="updateField('name', $event)"
+            name="name"
+            class="w-full rounded-[1.2rem] border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--color-accent)]/60"
+            placeholder="Your name"
+          />
+        </label>
+
+        <label class="block">
+          <span class="mb-2 block text-sm font-medium text-[var(--color-muted)]">Email</span>
+          <input
+            type="email"
+            [ngModel]="contactForm().email"
+            (ngModelChange)="updateField('email', $event)"
+            name="email"
+            class="w-full rounded-[1.2rem] border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--color-accent)]/60"
+            placeholder="you@company.com"
+          />
+        </label>
+      </div>
+
+      <label class="block">
+        <span class="mb-2 block text-sm font-medium text-[var(--color-muted)]">Message</span>
+        <textarea
+          rows="6"
+          [ngModel]="contactForm().message"
+          (ngModelChange)="updateField('message', $event)"
+          name="message"
+          class="w-full rounded-[1.2rem] border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--color-accent)]/60"
+          placeholder="Tell me about the role, project, or challenge you’d like to discuss."
+        ></textarea>
+      </label>
+
+      <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-slate-950 transition hover:translate-y-[-1px]">
+        Send Message
+        <app-ui-icon name="arrow-up-right" className="h-4 w-4" />
+      </button>
+
+      @if (formSubmitted()) {
+        <p class="text-sm text-[var(--color-muted)]">
+          Your email client should open with the message prefilled. If it doesn’t, you can still reach me directly at
+          <a href="mailto:ashwini.ranjan@protonmail.com" class="text-[var(--color-accent)]">ashwini.ranjan&#64;protonmail.com</a>.
+        </p>
+      }
+    </form>
+  </div>
+</section>

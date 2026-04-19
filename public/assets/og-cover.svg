@@ -1,0 +1,12 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="32" fill="#08111F"/>
+  <circle cx="190" cy="120" r="140" fill="#38BDF8" fill-opacity="0.18"/>
+  <circle cx="990" cy="120" r="160" fill="#22C55E" fill-opacity="0.16"/>
+  <circle cx="960" cy="510" r="190" fill="#38BDF8" fill-opacity="0.08"/>
+  <rect x="72" y="84" width="1056" height="462" rx="28" fill="#0D1728" stroke="#23314A"/>
+  <text x="120" y="220" fill="#94A3B8" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">FULL-STACK .NET DEVELOPER</text>
+  <text x="120" y="320" fill="#E5EDF8" font-family="Arial, sans-serif" font-size="72" font-weight="700">Ashwini Ranjan</text>
+  <text x="120" y="392" fill="#C9D6E5" font-family="Arial, sans-serif" font-size="32">Angular, ASP.NET Core, SQL Server, Azure, CI/CD</text>
+  <rect x="120" y="442" width="240" height="52" rx="26" fill="#22C55E" fill-opacity="0.16" stroke="#22C55E"/>
+  <text x="152" y="476" fill="#D7FFE5" font-family="Arial, sans-serif" font-size="24">Enterprise Web Apps</text>
+</svg>

@@ -1,77 +1,47 @@
 [
   {
-    "slug": "task-manager-app",
-    "title": "Task Manager App",
-    "subtitle": "Productivity Platform",
-    "summary": "A full-stack task management application built for teams that need clean workflows, task status visibility, and maintainable API-driven architecture.",
-    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    "slug": "employee-api-deployment",
+    "title": "Employee API Deployment",
+    "subtitle": "Cloud-Hosted REST API",
+    "summary": "A RESTful Employee Management API built in ASP.NET Core 8 and deployed to Azure App Service with clean endpoint design, validation, and API documentation.",
+    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&q=80",
     "githubUrl": "https://github.com/",
     "demoUrl": "https://example.com/",
-    "stack": ["Angular", "ASP.NET Core", "SQL Server", "REST API"],
+    "stack": ["ASP.NET Core 8", "Web API", "C#", "Swagger", "Azure App Service"],
     "features": [
-      "Task CRUD with status tracking, due dates, and user-friendly workflow segmentation.",
-      "Responsive dashboard layout with reusable Angular UI components and clean routing.",
-      "Backend API design with layered structure and SQL Server-backed persistence."
+      "Created REST endpoints for retrieving, creating, and deleting employee records.",
+      "Added request validation and Swagger UI for easier API testing and documentation.",
+      "Deployed the application to Azure App Service for a live cloud-hosted demo environment."
+    ]
+  },
+  {
+    "slug": "task-manager-app",
+    "title": "Task Manager App",
+    "subtitle": "Full-Stack Productivity App",
+    "summary": "A full-stack task management application with an Angular frontend and ASP.NET Core backend, built around clean CRUD workflows and a structured REST API.",
+    "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80",
+    "githubUrl": "https://github.com/",
+    "demoUrl": "https://example.com/",
+    "stack": ["Angular", "ASP.NET Core", "REST APIs", "SQL Server"],
+    "features": [
+      "Built a full-stack task manager with task CRUD operations and a user-friendly workflow.",
+      "Implemented a clean REST API backend connected to SQL Server.",
+      "Added unit tests covering the API layer for more reliable backend behavior."
     ]
   },
   {
     "slug": "contact-book-app",
-    "title": "Contact Book App",
+    "title": "Contact Book",
     "subtitle": "Secure Contact Management",
-    "summary": "A secure contact management system focused on searchable contact records, role-aware access, and clean pagination patterns.",
-    "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80",
+    "summary": "A contact management application with secure JWT authentication, fast contact lookup, and a paginated Angular UI backed by ASP.NET Core APIs and SQL Server.",
+    "image": "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1200&q=80",
     "githubUrl": "https://github.com/",
     "demoUrl": "https://example.com/",
     "stack": ["Angular", "ASP.NET Core", "JWT", "SQL Server"],
     "features": [
-      "JWT login flow with protected routes and API authorization.",
-      "Search, filter, and paginated contact listing optimized for usability.",
-      "Structured REST APIs connected to SQL Server with scalable entity design."
-    ]
-  },
-  {
-    "slug": "hrms-payroll-management-system",
-    "title": "HRMS / Payroll Management System",
-    "subtitle": "Enterprise Operations Suite",
-    "summary": "An enterprise-inspired HR and payroll platform concept reflecting real-world work across employee administration, approvals, and payroll processes.",
-    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-    "githubUrl": "https://github.com/",
-    "demoUrl": "https://example.com/",
-    "stack": ["Angular", "ASP.NET Core", "Entity Framework Core", "Azure"],
-    "features": [
-      "Modules for employee records, payroll workflows, and internal reporting views.",
-      "Role-based access with secure APIs, validation, and business-rule-driven operations.",
-      "Enterprise-ready deployment mindset with Azure-hosted architecture and CI/CD patterns."
-    ]
-  },
-  {
-    "slug": "employee-leave-management-system",
-    "title": "Employee Leave Management System",
-    "subtitle": "Workflow Automation",
-    "summary": "A leave request and approval system designed to simplify employee workflows and make manager approvals easy to track and audit.",
-    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
-    "githubUrl": "https://github.com/",
-    "demoUrl": "https://example.com/",
-    "stack": ["Angular", ".NET 8", "SQL Server", "Azure DevOps"],
-    "features": [
-      "Employee request submission, leave balances, and approval chains.",
-      "Audit-friendly views and filtering for HR and reporting scenarios.",
-      "Clean delivery pipeline setup aligned with enterprise release practices."
-    ]
-  },
-  {
-    "slug": "jwt-authentication-rbac-demo",
-    "title": "JWT Authentication and RBAC Demo App",
-    "subtitle": "Security Showcase",
-    "summary": "A focused demo app illustrating secure authentication flows, role-based authorization, and maintainable API security patterns in ASP.NET Core.",
-    "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
-    "githubUrl": "https://github.com/",
-    "demoUrl": "https://example.com/",
-    "stack": ["ASP.NET Core", "JWT", "RBAC", "Swagger"],
-    "features": [
-      "Token-based login and refresh-friendly authentication structure.",
-      "Role-aware authorization policies for admin, manager, and user scenarios.",
-      "Swagger-driven API documentation to accelerate testing and onboarding."
+      "Implemented secure JWT login and protected API access.",
+      "Added paginated contact listing with search and filtering for quick navigation.",
+      "Connected the Angular frontend to a RESTful ASP.NET Core backend using SQL Server."
     ]
   }
 ]

@@ -19,6 +19,7 @@ export interface Project {
   subtitle: string;
   summary: string;
   image: string;
+  images?: string[];
   githubUrl?: string;
   demoUrl?: string;
   stack: string[];

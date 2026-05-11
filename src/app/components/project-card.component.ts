@@ -10,11 +10,23 @@ import { UiIconComponent } from './ui-icon.component';
       <div
         class="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[var(--color-surface)]"
       >
-        <img
-          [src]="project.image"
-          [alt]="project.title"
-          class="h-52 w-full object-cover transition duration-700 group-hover:scale-105"
-        />
+        @if (project.images?.length) {
+          <div class="grid h-64 gap-2 bg-slate-100 p-2 sm:grid-cols-2">
+            @for (image of project.images; track image) {
+              <img
+                [src]="image"
+                [alt]="project.title"
+                class="h-full min-h-0 w-full rounded-[1rem] bg-white object-contain transition duration-700 group-hover:scale-[1.02]"
+              />
+            }
+          </div>
+        } @else {
+          <img
+            [src]="project.image"
+            [alt]="project.title"
+            class="h-52 w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+        }
         <div
           class="absolute inset-0 bg-gradient-to-t from-[var(--color-panel)]/80 to-transparent"
         ></div>

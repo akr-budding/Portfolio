@@ -21,10 +21,10 @@ import { SeoService } from '../../services/seo.service';
     ProjectCardComponent,
     BlogCardComponent,
     SkeletonCardComponent,
-    UiIconComponent
+    UiIconComponent,
   ],
   templateUrl: './home-page.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomePageComponent implements OnInit {
   private readonly contentService = inject(ContentService);
@@ -37,7 +37,7 @@ export class HomePageComponent implements OnInit {
   protected readonly contactForm = signal({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   protected readonly formSubmitted = signal(false);
 
@@ -45,35 +45,53 @@ export class HomePageComponent implements OnInit {
     { label: 'Years Experience', value: '3+' },
     { label: 'Employees Supported', value: '4,000+' },
     { label: 'API Speed Improvement', value: '30%' },
-    { label: 'Release Cadence', value: 'Bi-weekly' }
+    { label: 'Release Cadence', value: 'Bi-weekly' },
   ];
 
   protected readonly skillGroups: SkillGroup[] = [
     {
       title: 'Backend',
       icon: 'server',
-      items: ['C#', 'ASP.NET Core', '.NET 6/8', 'Entity Framework Core', 'Web APIs', 'JWT', 'RBAC', 'Dapper']
+      items: [
+        'C#',
+        'ASP.NET Core',
+        '.NET 6/8/9',
+        'Entity Framework Core',
+        'Web APIs',
+        'JWT',
+        'RBAC',
+        'Dapper',
+      ],
     },
     {
       title: 'Frontend',
       icon: 'code',
-      items: ['Angular', 'TypeScript', 'RxJS', 'HTML5', 'CSS3', 'JavaScript']
+      items: ['Angular', 'TypeScript', 'RxJS', 'HTML5', 'CSS3', 'JavaScript'],
     },
     {
       title: 'Database',
       icon: 'database',
-      items: ['SQL Server', 'T-SQL', 'Stored Procedures', 'Query Optimization', 'Indexing']
+      items: ['SQL Server', 'T-SQL', 'Stored Procedures', 'Query Optimization', 'Indexing'],
     },
     {
       title: 'Cloud & DevOps',
       icon: 'cloud',
-      items: ['Azure', 'Azure App Service', 'Azure SQL', 'Azure DevOps', 'CI/CD', 'Docker']
+      items: [
+        'Azure',
+        'Azure App Service',
+        'Azure SQL',
+        'Azure DevOps',
+        'GitHub Actions',
+        'Docker',
+        'Render',
+        'Vercel',
+      ],
     },
     {
       title: 'Practices & Tools',
       icon: 'toolbox',
-      items: ['Git', 'REST API Design', 'Agile/Scrum', 'Code Reviews', 'Debugging', 'Mentoring']
-    }
+      items: ['Git', 'REST API Design', 'Agile/Scrum', 'Code Reviews', 'Debugging', 'Mentoring'],
+    },
   ];
 
   protected readonly timeline: ExperienceItem[] = [
@@ -89,8 +107,8 @@ export class HomePageComponent implements OnInit {
         'Built secure JWT-authenticated APIs with role-based access control and strong input validation patterns.',
         'Created and maintained Azure DevOps CI/CD pipelines supporting dependable bi-weekly production releases.',
         'Worked across payroll and HR applications used by 4,000+ employees, balancing feature delivery with stability.',
-        'Mentored junior developers through reviews, pairing, and cleaner coding standards.'
-      ]
+        'Mentored junior developers through reviews, pairing, and cleaner coding standards.',
+      ],
     },
     {
       company: 'Tata Consultancy Services',
@@ -102,16 +120,16 @@ export class HomePageComponent implements OnInit {
       achievements: [
         'Optimized SQL queries and stored procedures to speed up reporting scenarios for banking clients.',
         'Strengthened Git workflow discipline and production readiness in a client-facing enterprise environment.',
-        'Delivered audit-focused data outputs with accuracy and consistency across changing business requirements.'
-      ]
-    }
+        'Delivered audit-focused data outputs with accuracy and consistency across changing business requirements.',
+      ],
+    },
   ];
 
   public ngOnInit() {
     this.seoService.update({
       title: 'Ashwini Ranjan | Full-Stack .NET Developer',
       description:
-        'Modern portfolio for Ashwini Ranjan, a full-stack .NET developer with 3+ years of experience building Angular, ASP.NET Core, SQL Server, and Azure-powered enterprise applications.'
+        'Modern portfolio for Ashwini Ranjan, a full-stack .NET developer with 3+ years of experience building Angular, ASP.NET Core, SQL Server, and Azure-powered enterprise applications.',
     });
 
     this.contentService.getProjects().subscribe((projects) => {
@@ -135,7 +153,7 @@ export class HomePageComponent implements OnInit {
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
     window.open(
       `mailto:ashwini.ranjan@protonmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(name || 'Recruiter')}&body=${body}`,
-      '_blank'
+      '_blank',
     );
   }
 }

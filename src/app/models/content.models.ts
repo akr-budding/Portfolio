@@ -19,8 +19,8 @@ export interface Project {
   subtitle: string;
   summary: string;
   image: string;
-  githubUrl: string;
-  demoUrl: string;
+  githubUrl?: string;
+  demoUrl?: string;
   stack: string[];
   features: string[];
 }

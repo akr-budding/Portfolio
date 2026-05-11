@@ -30,6 +30,7 @@
     "subtitle": "Event-Driven Microservices Workflow",
     "summary": "An event-driven order processing system where order placement publishes RabbitMQ messages consumed by independent Inventory and Email services, with live status updates pushed to Angular through SignalR.",
     "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    "githubUrl": "https://github.com/akr-budding/order-pipeline",
     "stack": [
       ".NET 9",
       "Angular 19",

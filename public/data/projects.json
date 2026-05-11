@@ -59,31 +59,5 @@
       "Added request validation and Swagger UI for easier API testing and documentation.",
       "Deployed the application to Azure App Service for a live cloud-hosted demo environment."
     ]
-  },
-  {
-    "slug": "task-manager-app",
-    "title": "Task Manager App",
-    "subtitle": "Full-Stack Productivity App",
-    "summary": "A full-stack task management application with an Angular frontend and ASP.NET Core backend, built around clean CRUD workflows and a structured REST API.",
-    "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80",
-    "stack": ["Angular", "ASP.NET Core", "REST APIs", "SQL Server"],
-    "features": [
-      "Built a full-stack task manager with task CRUD operations and a user-friendly workflow.",
-      "Implemented a clean REST API backend connected to SQL Server.",
-      "Added unit tests covering the API layer for more reliable backend behavior."
-    ]
-  },
-  {
-    "slug": "contact-book-app",
-    "title": "Contact Book",
-    "subtitle": "Secure Contact Management",
-    "summary": "A contact management application with secure JWT authentication, fast contact lookup, and a paginated Angular UI backed by ASP.NET Core APIs and SQL Server.",
-    "image": "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1200&q=80",
-    "stack": ["Angular", "ASP.NET Core", "JWT", "SQL Server"],
-    "features": [
-      "Implemented secure JWT login and protected API access.",
-      "Added paginated contact listing with search and filtering for quick navigation.",
-      "Connected the Angular frontend to a RESTful ASP.NET Core backend using SQL Server."
-    ]
   }
 ]
